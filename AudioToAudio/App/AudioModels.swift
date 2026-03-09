@@ -86,27 +86,7 @@ extension AudioContainer {
     }
 
     var label: String {
-        switch identifier {
-        case AudioContainer.m4a.identifier:
-            return "M4A"
-        case AudioContainer.mp3.identifier:
-            return "MP3"
-        case AudioContainer.caf.identifier:
-            return "CAF"
-        case AudioContainer.wav.identifier:
-            return "WAV"
-        case AudioContainer.aiff.identifier:
-            return "AIFF"
-        case AudioContainer.aifc.identifier:
-            return "AIFC"
-        case AudioContainer.quickTimeAudio.identifier:
-            return "QuickTime Audio"
-        default:
-            if let utType = UTType(identifier), let ext = utType.preferredFilenameExtension {
-                return ext.uppercased()
-            }
-            return identifier
-        }
+        ".\(fileExtension.lowercased())"
     }
 }
 

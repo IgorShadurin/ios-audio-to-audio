@@ -856,7 +856,15 @@ final class AudioToAudioViewModel: ObservableObject {
         capabilities = [
             AudioPresetCapability(
                 presetName: "AVAssetExportPresetAppleM4A",
-                fileTypeIdentifiers: [AudioContainer.m4a.identifier, AudioContainer.wav.identifier]
+                fileTypeIdentifiers: [
+                    AudioContainer.mp3.identifier,
+                    AudioContainer.wav.identifier,
+                    AudioContainer.m4a.identifier,
+                    AudioContainer.aiff.identifier,
+                    AudioContainer.caf.identifier,
+                    AudioContainer.aifc.identifier,
+                    AudioContainer.quickTimeAudio.identifier
+                ]
             )
         ]
 

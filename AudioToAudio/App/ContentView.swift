@@ -1076,7 +1076,7 @@ struct ContentView: View {
             )
 
             if showcaseListOpen {
-                let previewOptions = Array(options.prefix(6))
+                let previewOptions = options
                 VStack(spacing: 0) {
                     ForEach(previewOptions.indices, id: \.self) { index in
                         let option = previewOptions[index]
