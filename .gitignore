@@ -1,0 +1,17 @@
+.DS_Store
+.build/
+DerivedData/
+xcuserdata/
+*.xcuserstate
+*.moved-aside
+
+# Prompt-required local working docs
+data/
+.build
+.idea
+.swiftpm
+build
+build-device
+build-sim
+build-sim-iphone17
+build-sim-sim1

@@ -1,0 +1,11 @@
+{
+  "notes": "Only keys listed in max_length_by_key are length-validated across all locales.",
+  "max_length_by_key": {
+    "Unlock Unlimited Usage": 28,
+    "Unlimited usage, billed weekly": 36,
+    "Unlimited usage, billed monthly": 37,
+    "Unlimited usage forever": 29,
+    "Most popular": 12,
+    "Best value": 10
+  }
+}
