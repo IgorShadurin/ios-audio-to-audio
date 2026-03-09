@@ -69,8 +69,8 @@ final class PurchaseManager {
         case unknown
     }
 
-    static let weeklyProductID = "org.icorpaudio.audiotoaudio.weekly"
-    static let monthlyProductID = "org.icorpaudio.audiotoaudio.monthly"
+    static let weeklyProductID = "org.icorpaudio.audiotoaudio.v2.weekly"
+    static let monthlyProductID = "org.icorpaudio.audiotoaudio.v2.monthly"
     static let lifetimeProductID = "org.icorpaudio.audiotoaudio.lifetime"
 
     // Backward-compatibility with legacy identifiers used in the reference app.
