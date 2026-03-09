@@ -1,17 +1,22 @@
 # Audio To Audio
 
-Audio To Audio is a local-first iOS app for converting audio between source-compatible formats with a simple default flow and advanced controls tucked away when needed.
+Audio To Audio is an iPhone app for quickly converting and trimming audio from files or videos without a complicated workflow.  
+It is built for people who need fast, repeatable results: creators preparing clips for social platforms, podcasters cleaning up segments, students extracting voice notes from videos, and anyone who needs an audio file in the right format.
+
+The app focuses on a clean flow: choose source, adjust only what you need, convert, then share or save.
 
 ## Features
 
-- Import from Files (audio/video) and Photos (video with audio).
-- Simple default conversion flow with Auto output support.
-- Source-compatible output format detection (dynamic per source).
-- Advanced settings behind a collapsed section (preset, trim range, fades, network optimization).
-- Smart boundary suggestion for cleaner start/end points when trimming is needed.
-- Progress + cancel for long-running conversions.
-- Share or save converted output.
-- i18n-ready string-key architecture with locale resources.
+- Import from **Files** (audio or video) and **Photos** (video).
+- Trim directly on a waveform with draggable start/end handles.
+- Preview playback from any point in the selected range.
+- Convert to source-compatible audio formats, including an **Auto** option.
+- Use optional advanced controls (fade in, fade out, optimize for network use).
+- See conversion progress and cancel when needed.
+- Preview result, then **Share audio** or **Save to Files**.
+- Free plan supports 1 conversion per day; Premium unlocks unlimited conversions.
+- Weekly, monthly, and lifetime Premium plans with restore purchases support.
+- Localized interface across all supported app languages.
 
 ## Showcase
 
