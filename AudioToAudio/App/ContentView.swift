@@ -102,13 +102,11 @@ struct ContentView: View {
         ) {
             paywallSheet
         }
-        .alert(L10n.tr("Start with a new video?"), isPresented: $isRestartConfirmationPresented) {
+        .alert(L10n.tr("action.new_trim"), isPresented: $isRestartConfirmationPresented) {
             Button(L10n.tr("Cancel"), role: .cancel) {}
             Button(L10n.tr("Reset"), role: .destructive) {
                 viewModel.restart()
             }
-        } message: {
-            Text(L10n.tr("This will clear the selected source video and current conversion results."))
         }
 #if DEBUG
         .background(
@@ -702,6 +700,9 @@ struct ContentView: View {
                             if let size = viewModel.outputSizeText {
                                 statPill(icon: "internaldrive", text: size)
                             }
+                            if let duration = viewModel.outputDurationText {
+                                statPill(icon: "timer", text: duration)
+                            }
                         }
                     }
                 }
@@ -727,7 +728,7 @@ struct ContentView: View {
                 Button {
                     isRestartConfirmationPresented = true
                 } label: {
-                    actionButton(title: L10n.tr("New video"), icon: "arrow.counterclockwise.circle.fill", primary: false)
+                    actionButton(title: L10n.tr("action.new_trim"), icon: "arrow.counterclockwise.circle.fill", primary: false)
                 }
                 .buttonStyle(.plain)
             }

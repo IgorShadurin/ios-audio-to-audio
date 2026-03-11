@@ -25,6 +25,18 @@ enum L10n {
     private static let localizedCacheLock = NSLock()
 
     private static func manualOverride(for key: String) -> String? {
+        if key == "action.new_trim" {
+            for locale in preferredLocalizationKeys() {
+                if let value = localizedValue(for: "Start over", locale: locale) {
+                    return value
+                }
+                if let value = localizedValue(for: "Reset", locale: locale) {
+                    return value
+                }
+            }
+            return NSLocalizedString("Start over", comment: "")
+        }
+
         guard let languageKey = resolvedLanguageKey() else {
             return nil
         }
@@ -57,9 +69,6 @@ enum L10n {
             return localizedValue(for: "Go back", locale: languageKey)
         case "action.reset":
             return localizedValue(for: "Reset", locale: languageKey)
-        case "action.new_trim":
-            return localizedValue(for: "Start over", locale: languageKey)
-                ?? localizedValue(for: "New video", locale: languageKey)
         case "action.suggest_boundaries":
             return suggestBoundariesOverrides[languageKey]
         case "action.cancel_trim":
@@ -288,7 +297,7 @@ enum L10n {
         "da": "Lyd til Lyd",
         "de": "Audio zu Audio",
         "el": "Ήχος σε Ήχο",
-        "en": "Audio To Audio",
+        "en": "Audio to Audio",
         "es": "Audio a Audio",
         "fi": "Ääni Ääneksi",
         "fr": "Audio vers Audio",

@@ -96,6 +96,7 @@ final class AudioToAudioViewModel: ObservableObject {
     @Published private(set) var suggestedBoundaries: SmartTrimSuggestion?
     @Published private(set) var trimmedAudioURL: URL?
     @Published private(set) var trimmedFileSizeBytes: Int64?
+    @Published private(set) var trimmedDurationSeconds: Double?
 
     @Published private(set) var statusMessage: String = L10n.tr("status.pick_source")
     @Published private(set) var errorMessage: String?
@@ -174,6 +175,11 @@ final class AudioToAudioViewModel: ObservableObject {
     var outputSizeText: String? {
         guard let trimmedFileSizeBytes else { return nil }
         return humanReadableSize(trimmedFileSizeBytes)
+    }
+
+    var outputDurationText: String? {
+        guard let trimmedDurationSeconds else { return nil }
+        return formatSeconds(trimmedDurationSeconds)
     }
 
     var clipDurationRange: ClosedRange<Double> {
@@ -464,6 +470,7 @@ final class AudioToAudioViewModel: ObservableObject {
         removeManagedFileIfNeeded(trimmedAudioURL)
         trimmedAudioURL = nil
         trimmedFileSizeBytes = nil
+        trimmedDurationSeconds = nil
         errorMessage = nil
         statusMessage = L10n.tr("status.trimming")
 
@@ -485,6 +492,8 @@ final class AudioToAudioViewModel: ObservableObject {
             applyWorkflowState()
             trimmedAudioURL = outputURL
             trimmedFileSizeBytes = size
+            let outputDurationSeconds = (try? await AVURLAsset(url: outputURL).load(.duration).seconds) ?? plan.clipDurationSeconds
+            trimmedDurationSeconds = outputDurationSeconds.isFinite ? max(0, outputDurationSeconds) : max(0, plan.clipDurationSeconds)
 
             if !hasPremiumAccess {
                 quotaStore.recordFreeConversionToday()
@@ -561,6 +570,7 @@ final class AudioToAudioViewModel: ObservableObject {
         suggestedBoundaries = nil
         trimmedAudioURL = nil
         trimmedFileSizeBytes = nil
+        trimmedDurationSeconds = nil
         errorMessage = nil
         validationMessage = nil
         isTrimming = false
@@ -611,6 +621,7 @@ final class AudioToAudioViewModel: ObservableObject {
         suggestedBoundaries = nil
         trimmedAudioURL = nil
         trimmedFileSizeBytes = nil
+        trimmedDurationSeconds = nil
         errorMessage = nil
 
         resetTrimRangeToFullDuration(metadata.durationSeconds)
@@ -894,11 +905,13 @@ final class AudioToAudioViewModel: ObservableObject {
             workflowStep = .result
             trimmedAudioURL = demoURL
             trimmedFileSizeBytes = 1_024_000
+            trimmedDurationSeconds = max(0, clipEndSeconds - clipStartSeconds)
             statusMessage = L10n.tr("status.trim_finished")
         } else if showcaseStep == "paywall" {
             workflowStep = .source
             trimmedAudioURL = nil
             trimmedFileSizeBytes = nil
+            trimmedDurationSeconds = nil
             purchaseOptions = [
                 PurchasePlanOption(
                     id: PurchaseManager.weeklyProductID,
@@ -925,6 +938,9 @@ final class AudioToAudioViewModel: ObservableObject {
             isPaywallPresented = true
         } else {
             workflowStep = .trim
+            trimmedAudioURL = nil
+            trimmedFileSizeBytes = nil
+            trimmedDurationSeconds = nil
         }
     }
 
