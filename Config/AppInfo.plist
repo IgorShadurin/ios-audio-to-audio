@@ -24,6 +24,10 @@
 	<false/>
 	<key>LSRequiresIPhoneOS</key>
 	<true/>
+	<key>PRIVACY_POLICY_URL</key>
+	<string>https://yumcut.com/mobile/privacy</string>
+	<key>TERMS_OF_USE_URL</key>
+	<string>https://www.apple.com/legal/internet-services/itunes/dev/stdeula/</string>
 	<key>NSPhotoLibraryAddUsageDescription</key>
 	<string>Allow importing videos from Photos to convert their audio locally.</string>
 	<key>NSPhotoLibraryUsageDescription</key>

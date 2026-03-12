@@ -7,7 +7,7 @@
 	objects = {
 
 /* Begin PBXFileReference section */
-		525A4E8D2EB8E736007021B9 /* AudioToAudio.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Convert Audio to Audio.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		525A4E8D2EB8E736007021B9 /* Convert Audio to Audio.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Convert Audio to Audio.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFileSystemSynchronizedRootGroup section */
@@ -40,7 +40,7 @@
 		525A4E8E2EB8E736007021B9 /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				525A4E8D2EB8E736007021B9 /* AudioToAudio.app */,
+				525A4E8D2EB8E736007021B9 /* Convert Audio to Audio.app */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -67,7 +67,7 @@
 			);
 			name = AudioToAudio;
 			productName = "Convert Audio to Audio";
-			productReference = 525A4E8D2EB8E736007021B9 /* AudioToAudio.app */;
+			productReference = 525A4E8D2EB8E736007021B9 /* Convert Audio to Audio.app */;
 			productType = "com.apple.product-type.application";
 		};
 /* End PBXNativeTarget section */
@@ -340,7 +340,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 1;
+				CURRENT_PROJECT_VERSION = 2;
 				DEVELOPMENT_TEAM = 966L8B5X3V;
 				ENABLE_PREVIEWS = YES;
 				ENABLE_USER_SCRIPT_SANDBOXING = NO;
@@ -370,7 +370,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 1;
+				CURRENT_PROJECT_VERSION = 2;
 				DEVELOPMENT_TEAM = 966L8B5X3V;
 				ENABLE_PREVIEWS = YES;
 				ENABLE_USER_SCRIPT_SANDBOXING = NO;
